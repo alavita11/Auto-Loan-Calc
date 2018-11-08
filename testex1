@@ -1,19 +1,14 @@
-/// <reference types="Cypress" />
-
-context('Location', () => {
-  beforeEach(() => {
+describe('Auto Loan Calculator', function () {
+  it('Auto Loan Calculator', function () {
     cy.visit('https://www.bankrate.com/calculators/auto/auto-loan-calculator.aspx')
-  })
 
-  it('cy.hash() - get the current URL hash', () => {
-    // https://on.cypress.io/hash
-    cy.hash().should('be.empty')
-  })
+    cy.get('gearbox-input')
+    .type('20000')
+    .should('have.value', '>20000')
+    //https://screencast.com/t/TCCDZ8bJUa
 
-  it('cy.location() - get window.location', () => {
-    // https://on.cypress.io/location
-    cy.location().should((location) => {
-      expect(location.hash).to.be.empty
-      expect(location.href).to.eq('https://example.cypress.io/commands/location')
-      expect(location.host).to.eq('example.cypress.io')
-      expect(location.hostname).to.eq('example.cypress.io')
+    //new-used dropdown dropdown__selected selected selectedTitle +mg-bottom-none "ude"
+    cy.contains('See amortization schedule').click()
+
+  })
+})
