@@ -32,12 +32,9 @@ describe('Auto Loan Calculator', function () {
       
     cy.get('gearbox-input').contains('interest-rate')
     .type('99')
-    .expect('error-message interest-input__error').contains('Invalid rate)
+    .expect('error-message interest-input__error').contains('Invalid rate')
       
-    
-    //cy.get('[name="countries"]').click().get.('[id="selection_option_375"]').click()
 
-    //new-used dropdown dropdown__selected selected selectedTitle +mg-bottom-none "used"
     
 
   })
